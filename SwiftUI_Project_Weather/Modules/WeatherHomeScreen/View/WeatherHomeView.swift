@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WeatherHomeView: View {
-    private let isMorning = TestBackground().CheckMorningOrEvening()
+    private let isMorning = TestBackground().checkMorningOrEvening()
     var body: some View {
         ZStack{
             Image(isMorning ? .morningBackground : .evening)

@@ -8,7 +8,7 @@
 import Foundation
 
 class TestBackground{
-    func CheckMorningOrEvening()->Bool{
+    func checkMorningOrEvening()->Bool{
         
         var result : Bool
         

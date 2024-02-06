@@ -6,3 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct ColorsManager{
+    static var nightBackgroundColor = CGColor(red: 24/255, green: 2/255, blue: 84/255, alpha: 1)
+    static var dayBackgroundColor = Color.white.cgColor!
+}
