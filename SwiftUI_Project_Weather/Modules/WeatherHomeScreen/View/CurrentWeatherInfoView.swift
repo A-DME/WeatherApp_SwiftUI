@@ -6,42 +6,39 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct CurrentWeatherInfoView: View {
     
-    var location:String
-    var temperature : String
-    var weatherStatus : String
-    var HighTemp : String
-    var LowTemp : String
-    var lastUpdate: String
+    var weatherInfo: WeatherInfo?
     var morning:Bool
     var body: some View {
         VStack(alignment: .center){
-            CustomText(text: location, size: 36, fontstyle: "Inter-SemiBold",isMorning: morning)
-            CustomText(text: temperature, size: 64, fontstyle: "Inter-SemiBold", isMorning: morning)
-            CustomText(text: weatherStatus, size: 32, fontstyle: "Inter-Regular", isMorning: morning)
+            CustomText(text: weatherInfo?.location.name ?? "", size: 36, fontstyle: "Inter-SemiBold",isMorning: morning)
+            CustomText(text: "\(weatherInfo?.current.tempC ?? 0.0)˚", size: 64, fontstyle: "Inter-SemiBold", isMorning: morning)
+            CustomText(text: weatherInfo?.current.condition.text ?? "", size: 32, fontstyle: "Inter-Regular", isMorning: morning)
             HStack{
                 Spacer()
                 CustomText(text: "H:", size: 32, fontstyle: "Inter-Regular", isMorning: morning)
                 
-                CustomText(text: HighTemp, size: 32, fontstyle: "Inter-Regular", isMorning: morning)
+                CustomText(text: "\(weatherInfo?.forecast.forecastday[0].day.maxtempC ?? 0.0)˚", size: 32, fontstyle: "Inter-Regular", isMorning: morning)
                 Spacer()
                 CustomText(text: "L:", size: 32, fontstyle: "Inter-Regular", isMorning: morning)
                 
-                CustomText(text: LowTemp, size: 32, fontstyle: "Inter-Regular", isMorning: morning)
+                CustomText(text: "\(weatherInfo?.forecast.forecastday[0].day.mintempC ?? 0.0)˚", size: 32, fontstyle: "Inter-Regular", isMorning: morning)
                 Spacer()
                 
             }.padding(.vertical, -8)
                 
-            Image(.cloudy)
-            CustomText(text: lastUpdate, size: 14, fontstyle: "Inter-Regular", isMorning: morning)
-                .padding(.top, -20)
+//            Image(.cloudy)
+            KFImage(URL(string: APIHelper.getURLFor(.conditionImage, imageFileURL: weatherInfo?.current.condition.icon ?? "")))
+            CustomText(text: weatherInfo?.current.lastUpdated ?? "", size: 14, fontstyle: "Inter-Regular", isMorning: morning)
+                .padding(.top, -10)
         }
         
     }
 }
 
 #Preview {
-    CurrentWeatherInfoView(location: "Cairo", temperature: "21˚", weatherStatus: "Partly Cloudy", HighTemp: "16˚", LowTemp: "6˚",lastUpdate: "05-02-2024  2:24", morning: true)
+    CurrentWeatherInfoView(weatherInfo: WeatherInfo(), morning: true)
 }
