@@ -9,13 +9,21 @@ import Foundation
 
 
 // MARK: - Location
-class Location: Codable, Identifiable {
+struct Location: Codable, Identifiable {
     let name, country: String
     let lat, lon: Double
+    let id = UUID()
     
+    init() {
+        self.name = ""
+        self.country = ""
+        self.lat = 20.0
+        self.lon = 20.0
+        // Because lon & lat of 0,0 is the Null Island
+    }
 
     enum CodingKeys: String, CodingKey {
-        case name, country, lat, lon
+        case name, country, lat, lon, id
         
     }
 }

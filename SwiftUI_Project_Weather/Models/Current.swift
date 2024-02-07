@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Current
-class Current: Codable, Identifiable {
+struct Current: Codable, Identifiable {
     let lastUpdated: String
     let tempC: Double
     let condition: Condition
@@ -16,6 +16,17 @@ class Current: Codable, Identifiable {
     let humidity: Int
     let feelslikeC: Double
     let visKM: Double
+    let id = UUID()
+    
+    init() {
+        self.lastUpdated = ""
+        self.tempC = 0.0
+        self.condition = Condition()
+        self.pressureMB = 0.0
+        self.humidity = 0
+        self.feelslikeC = 0.0
+        self.visKM = 0.0
+    }
     
     enum CodingKeys: String, CodingKey {
         case lastUpdated = "last_updated"
@@ -25,5 +36,6 @@ class Current: Codable, Identifiable {
         case humidity
         case feelslikeC = "feelslike_c"
         case visKM = "vis_km"
+        case id
         }
 }

@@ -8,8 +8,18 @@
 import Foundation
 
 // MARK: - Condition
-class Condition: Codable, Identifiable {
+struct Condition: Codable, Identifiable {
     let text: String
     let icon: String
     let code: Int
+    let id = UUID()
+    
+    init() {
+        self.text = ""
+        self.icon = ""
+        self.code = 0
+    }
+    enum CodingKeys: String, CodingKey {
+        case text, icon, code, id
+        }
 }

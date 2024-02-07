@@ -8,14 +8,23 @@
 import Foundation
 
 // MARK: - Forecastday
-class Forecastday: Codable, Identifiable {
+struct Forecastday: Codable, Identifiable {
     let date: String
     let day: Day
     let astro: Astro
     let hour: [Hour]
+    let id = UUID()
+    
+    init(){
+        self.date = ""
+        self.day = Day()
+        self.astro = Astro()
+        self.hour = []
+    }
 
     enum CodingKeys: String, CodingKey {
         case date
         case day, astro, hour
+        case id
     }
 }

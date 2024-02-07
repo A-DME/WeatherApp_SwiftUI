@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct GridViewItem: View {
-    @State var title : String
-    @State var value : String
+    var title : String
+    var value : String
     var isMorning : Bool
     var body: some View {
             VStack{

@@ -27,19 +27,11 @@ struct WeatherHomeView: View {
                 VStack{
                     Spacer()
                     Spacer()
-                    CurrentWeatherInfoView(
-                        location:weatherInfo?.location.name ?? "",
-                        temperature: String(weatherInfo?.current.tempC ?? 0.0)+"˚" ,
-                        weatherStatus: weatherInfo?.current.condition.text ?? "",
-                        HighTemp: String(weatherInfo?.forecast.forecastday[0].day.maxtempC ?? 0.0)+"˚",
-                        LowTemp: String(weatherInfo?.forecast.forecastday[0].day.mintempC ?? 0.0)+"˚",
-                        lastUpdate: weatherInfo?.current.lastUpdated ?? "",
-                        morning: isMorning
-                    )
+                    CurrentWeatherInfoView(weatherInfo: weatherInfo, morning: isMorning)
                     Spacer()
-                    StaticTableView(morning: isMorning)
+                    StaticTableView(morning: isMorning, forecastOf3Days: weatherInfo?.forecast.forecastday)
                     Spacer()
-                    GridView(isMorning: isMorning)
+                    GridView(currentInfo: weatherInfo ?? WeatherInfo(), isMorning: isMorning)
                     Spacer()
                 }
                 if isPresentingProgressIndicator{
