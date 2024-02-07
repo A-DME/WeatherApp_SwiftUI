@@ -10,7 +10,7 @@ import SwiftUI
 struct GridView: View {
     var isMorning: Bool
     var body: some View {
-        Grid (horizontalSpacing: 40, verticalSpacing: 40){
+        Grid (horizontalSpacing: 40, verticalSpacing: 20){
             GridRow {
                 GridViewItem(title: "VISIBILITY", value: "10 Km", isMorning: isMorning)
                 GridViewItem(title: "HUMIDITY", value: "36%", isMorning: isMorning)

@@ -10,12 +10,12 @@ import Foundation
 // MARK: - Current
 class Current: Codable, Identifiable {
     let lastUpdated: String
-    let tempC: Int
+    let tempC: Double
     let condition: Condition
-    let pressureMB: Int
+    let pressureMB: Double
     let humidity: Int
-    let feelslikeC: Int
-    let visKM: Int
+    let feelslikeC: Double
+    let visKM: Double
     
     enum CodingKeys: String, CodingKey {
         case lastUpdated = "last_updated"

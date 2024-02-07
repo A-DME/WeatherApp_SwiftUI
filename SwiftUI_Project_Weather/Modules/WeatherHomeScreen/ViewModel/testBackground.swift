@@ -12,8 +12,8 @@ class TestBackground{
         
         var result : Bool
         
-        let sunriseString = "2024-02-06 06:00"
-        let sunsetString = "2024-02-06 17:30"
+        let sunriseString = "2024-02-07 06:00"
+        let sunsetString = "2024-02-07 17:30"
         
         let date = Date.now
         
@@ -40,4 +40,14 @@ class TestBackground{
         }
         return result
     }
+}
+
+
+func getDayDate(from date:Date){
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    
+    let dateString = dateFormatter.string(from: date)
+    
+    
 }

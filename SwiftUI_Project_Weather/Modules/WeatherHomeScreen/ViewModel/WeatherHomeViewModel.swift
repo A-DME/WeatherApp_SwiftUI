@@ -7,11 +7,11 @@
 
 import Foundation
 
-class WeatherHomeViewModel{
+class WeatherHomeViewModel : ObservableObject{
     var networkManager: NetworkManager?
     var bindResultToViewController : (()->()) = {}
     var sport: String!
-    var result : WeatherInfo?  {
+    @Published var result : WeatherInfo?  {
         didSet{
             bindResultToViewController()
         }

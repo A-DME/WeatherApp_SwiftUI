@@ -30,7 +30,8 @@ struct WeatherDetailsView: View {
                     .padding()
                 Spacer()
             }
-        }
+        }.navigationBarBackButtonHidden(true)
+            
         
     }
 }
