@@ -12,7 +12,7 @@ struct ContentView: View {
     func display(){
         viewModel.loadDataFromApi()
         viewModel.bindResultToViewController = {
-            print(viewModel.getWeatherInfo()?.location.country)
+            print(viewModel.getWeatherInfo()?.forecast.forecastday[2].date)
         }
     }
     var body: some View {
