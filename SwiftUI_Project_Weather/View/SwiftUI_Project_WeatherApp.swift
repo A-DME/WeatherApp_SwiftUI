@@ -12,7 +12,8 @@ struct SwiftUI_Project_WeatherApp: App {
     var body: some Scene {
         WindowGroup {
 //            LaunchScreenView()
-            ContentView()
+            LaunchViewHandler()
+//            ContentView()
         }
     }
 }
