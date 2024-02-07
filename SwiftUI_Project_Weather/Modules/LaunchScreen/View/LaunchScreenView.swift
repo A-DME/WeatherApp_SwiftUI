@@ -13,7 +13,7 @@ struct LaunchScreenView: View {
     
     var viewModel = LaunchViewModel()
     
-    @StateObject var networkReachability = NetworkReachability()
+    @StateObject var networkReachability = NetworkReachability.networkReachability
     
     var body: some View {
         ZStack{
@@ -29,11 +29,6 @@ struct LaunchScreenView: View {
             }
         }message: {
             Text("You're offline")
-        }
-        .onAppear(){
-            let network = NetworkReachability()
-            print("network")
-            print(network.networkStatus)
         }
         .onReceive(networkReachability.$networkStatus, perform: { _ in
             

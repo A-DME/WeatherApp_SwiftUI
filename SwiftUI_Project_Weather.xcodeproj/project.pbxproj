@@ -14,6 +14,7 @@
 		048FF6922B72986E00251759 /* LaunchAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FF6912B72986E00251759 /* LaunchAnimationView.swift */; };
 		048FF6942B7298FA00251759 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FF6932B7298FA00251759 /* LaunchScreenView.swift */; };
 		048FF6962B729BCD00251759 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FF6952B729BCD00251759 /* LaunchViewModel.swift */; };
+		049A1D292B7393EB002F7266 /* DateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049A1D282B7393EB002F7266 /* DateHandler.swift */; };
 		1A2891CB2B728BD30093E9EB /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2891CA2B728BD30093E9EB /* WeatherInfo.swift */; };
 		1A2891CD2B728BFF0093E9EB /* Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2891CC2B728BFF0093E9EB /* Current.swift */; };
 		1A2891CF2B728C1B0093E9EB /* Astro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2891CE2B728C1B0093E9EB /* Astro.swift */; };
@@ -59,6 +60,7 @@
 		048FF6912B72986E00251759 /* LaunchAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAnimationView.swift; sourceTree = "<group>"; };
 		048FF6932B7298FA00251759 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		048FF6952B729BCD00251759 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
+		049A1D282B7393EB002F7266 /* DateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHandler.swift; sourceTree = "<group>"; };
 		1A2891CA2B728BD30093E9EB /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
 		1A2891CC2B728BFF0093E9EB /* Current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Current.swift; sourceTree = "<group>"; };
 		1A2891CE2B728C1B0093E9EB /* Astro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astro.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				1A2891EE2B728FCF0093E9EB /* Constants */,
 				1A2891E52B728F230093E9EB /* Animation */,
 				1A2891EA2B728F5E0093E9EB /* API */,
+				049A1D282B7393EB002F7266 /* DateHandler.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				1A38C8632B728ACF00E80F37 /* SwiftUI_Project_WeatherApp.swift in Sources */,
 				1A28920A2B72939B0093E9EB /* testBackground.swift in Sources */,
 				1A2892142B7294800093E9EB /* DummyVM.swift in Sources */,
+				049A1D292B7393EB002F7266 /* DateHandler.swift in Sources */,
 				048FF6962B729BCD00251759 /* LaunchViewModel.swift in Sources */,
 				1A2891FE2B7292710093E9EB /* CustomText.swift in Sources */,
 				1A2891CB2B728BD30093E9EB /* WeatherInfo.swift in Sources */,

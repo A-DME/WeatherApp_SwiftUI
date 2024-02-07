@@ -11,21 +11,21 @@ import Network
 
 class NetworkReachability: ObservableObject{
     
+    static let networkReachability = NetworkReachability()
     var monitor = NWPathMonitor()
     
     var monitorQueue = DispatchQueue(label: "network")
-    // TODO: - Search Why does it Lag or fail to detect network state
-    @Published var networkStatus : Bool = true // should be false
+    @Published var networkStatus : Bool = true
 
-    init(){
+    private init(){
+        monitor.start(queue: monitorQueue)
         
         monitor.pathUpdateHandler = {[weak self] path in
-                DispatchQueue.main.async {
-                    self?.networkStatus = path.status == .satisfied
-                }
+              
+                    self?.networkStatus = (path.status == .satisfied)
+             
             
         }
-        monitor.start(queue: monitorQueue)
   
     }
     
