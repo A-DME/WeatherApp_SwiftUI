@@ -6,24 +6,27 @@
 //
 
 import Foundation
-import Alamofire
+import Network
 
 
-class NetworkReachability{
+class NetworkReachability: ObservableObject{
     
-    let reachabilityManager =  NetworkReachabilityManager()
+    var monitor = NWPathMonitor()
+    
+    var monitorQueue = DispatchQueue(label: "network")
+    
+    @Published var networkStatus : Bool = false
 
-    func checkReachability(connectedHandler:@escaping ()->Void,notConnectedHandler:@escaping()->Void){
-        reachabilityManager?.startListening(onUpdatePerforming: { status in
-            switch status {
-                case .notReachable:
-                    print("not reachable")
-                    connectedHandler()
-                
-                case .reachable, .unknown:
-                    print("reachable")
-                    notConnectedHandler()
-            }
-        })
+    init(){
+        
+        monitor.pathUpdateHandler = {[weak self] path in
+                DispatchQueue.main.async {
+                    self?.networkStatus = path.status == .satisfied
+                }
+            
+        }
+        monitor.start(queue: monitorQueue)
+  
     }
+    
 }

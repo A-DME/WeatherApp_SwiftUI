@@ -20,17 +20,20 @@ struct CurrentWeatherInfoView: View {
         VStack(alignment: .center){
             CustomText(text: location, size: 36, fontstyle: "Inter-SemiBold",isMorning: morning)
             CustomText(text: temperature, size: 64, fontstyle: "Inter-SemiBold", isMorning: morning)
-            CustomText(text: weatherStatus, size: 36, fontstyle: "Inter-Regular", isMorning: morning)
+            CustomText(text: weatherStatus, size: 32, fontstyle: "Inter-Regular", isMorning: morning)
             HStack{
-                CustomText(text: "H:", size: 36, fontstyle: "Inter-Regular", isMorning: morning)
+                Spacer()
+                CustomText(text: "H:", size: 32, fontstyle: "Inter-Regular", isMorning: morning)
                 
-                CustomText(text: HighTemp, size: 36, fontstyle: "Inter-Regular", isMorning: morning)
+                CustomText(text: HighTemp, size: 32, fontstyle: "Inter-Regular", isMorning: morning)
+                Spacer()
+                CustomText(text: "L:", size: 32, fontstyle: "Inter-Regular", isMorning: morning)
                 
-                CustomText(text: "L:", size: 36, fontstyle: "Inter-Regular", isMorning: morning)
+                CustomText(text: LowTemp, size: 32, fontstyle: "Inter-Regular", isMorning: morning)
+                Spacer()
                 
-                CustomText(text: LowTemp, size: 36, fontstyle: "Inter-Regular", isMorning: morning)
+            }.padding(.vertical, -8)
                 
-            }.padding(.vertical, -10)
             Image(.cloudy)
             CustomText(text: lastUpdate, size: 14, fontstyle: "Inter-Regular", isMorning: morning)
                 .padding(.top, -20)
