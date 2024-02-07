@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WeatherDetailsView: View {
     @Environment(\.dismiss) var dismiss
+    var hoursInDay: [Hour]
     var body: some View {
         ZStack{
             Image(.morningBackground)
@@ -18,11 +19,13 @@ struct WeatherDetailsView: View {
                 .aspectRatio(1.5, contentMode: .fit)
             
             
-            VStack{
-                HourlyTableView(hours: ["Now","3PM", "4PM", "5PM"])
-                    .padding(EdgeInsets(top: 80, leading: 0, bottom: 0, trailing: 0))
-                Spacer()
-            }
+            ScrollView{
+                VStack{
+                    HourlyTableView(hours: hoursInDay)
+                        .padding(EdgeInsets(top: 80, leading: 0, bottom: 32, trailing: 0))
+                    Spacer()
+                }
+            }.ignoresSafeArea()
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {
@@ -40,5 +43,5 @@ struct WeatherDetailsView: View {
 }
 
 #Preview {
-    WeatherDetailsView()
+    WeatherDetailsView(hoursInDay: [])
 }

@@ -11,6 +11,10 @@ import Foundation
 class Astro: Codable, Identifiable {
     let sunrise, sunset: String
 
+    init() {
+        self.sunrise = ""
+        self.sunset = ""
+    }
     enum CodingKeys: String, CodingKey {
         case sunrise, sunset
     }

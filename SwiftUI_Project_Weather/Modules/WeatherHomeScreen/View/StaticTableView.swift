@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StaticTableView: View {
     var morning: Bool
+    var forecastOf3Days: [Forecastday]?
     var body: some View {
             VStack{
                 HStack{
@@ -18,19 +19,19 @@ struct StaticTableView: View {
                 }
                 Divider()
                     .background(Color.black)
-                NavigationLink(destination: WeatherDetailsView()){
-                    StaticTableViewCell(day: "Today", minTemp: 7.8, maxTemp: 15.5, morning: morning)
+                NavigationLink(destination: WeatherDetailsView(hoursInDay: forecastOf3Days?[0].hour ?? [])){
+                    StaticTableViewCell(forecastday: forecastOf3Days?[0] ?? Forecastday(), morning: morning)
                 }.accentColor(.clear)
                 
                 Divider()
                     .background(Color.black)
-                NavigationLink(destination: WeatherDetailsView()){
-                    StaticTableViewCell(day: "Wed", minTemp: 6.4, maxTemp: 16.1, morning: morning)
+                NavigationLink(destination: WeatherDetailsView(hoursInDay: forecastOf3Days?[1].hour ?? [])){
+                    StaticTableViewCell(forecastday: forecastOf3Days?[1] ?? Forecastday(), morning: morning)
                 }.background(.clear)
                 Divider()
                     .background(Color.black)
-                NavigationLink(destination: WeatherDetailsView()){
-                    StaticTableViewCell(day: "Thu", minTemp: 8.7, maxTemp: 17.8, morning: morning)
+                NavigationLink(destination: WeatherDetailsView(hoursInDay: forecastOf3Days?[2].hour ?? [])){
+                    StaticTableViewCell(forecastday: forecastOf3Days?[2] ?? Forecastday(), morning: morning)
                 }.background(.clear)
                 
             }
@@ -39,5 +40,5 @@ struct StaticTableView: View {
 }
 
 #Preview {
-    StaticTableView(morning: true)
+    StaticTableView(morning: true, forecastOf3Days: [Forecastday()])
 }

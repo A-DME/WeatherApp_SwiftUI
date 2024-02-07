@@ -12,4 +12,10 @@ class Condition: Codable, Identifiable {
     let text: String
     let icon: String
     let code: Int
+    
+    init() {
+        self.text = ""
+        self.icon = ""
+        self.code = 0
+    }
 }

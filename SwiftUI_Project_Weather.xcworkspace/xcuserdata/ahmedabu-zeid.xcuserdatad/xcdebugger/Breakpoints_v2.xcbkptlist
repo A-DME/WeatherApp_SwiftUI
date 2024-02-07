@@ -3,4 +3,69 @@
    uuid = "FE63E4FC-4699-4995-B488-D625DACB22AE"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D2D737DD-B7B8-4FBB-99BF-1FBCBC23EB4C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftUI_Project_Weather/Modules/WeatherHomeScreen/View/GridView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "D2D737DD-B7B8-4FBB-99BF-1FBCBC23EB4C - 660cc435f3308e0e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI_Project_Weather.GridViewItem, SwiftUI_Project_Weather.GridViewItem)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.GridRow&lt;SwiftUI.TupleView&lt;(SwiftUI_Project_Weather.GridViewItem, SwiftUI_Project_Weather.GridViewItem)&gt;&gt;, SwiftUI.GridRow&lt;SwiftUI.TupleView&lt;(SwiftUI_Project_Weather.GridViewItem, SwiftUI_Project_Weather.GridViewItem)&gt;&gt;)&gt; in SwiftUI_Project_Weather.GridView.body.getter : some"
+                  moduleName = "SwiftUI_Project_Weather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedabu-zeid/Documents/iOS%20Apps/SwiftUI%20Labs/SwiftUI_Project_Weather/SwiftUI_Project_Weather/Modules/WeatherHomeScreen/View/GridView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "118">
+               </Location>
+               <Location
+                  uuid = "D2D737DD-B7B8-4FBB-99BF-1FBCBC23EB4C - 660cc435f3308e0e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI_Project_Weather.GridViewItem, SwiftUI_Project_Weather.GridViewItem)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.GridRow&lt;SwiftUI.TupleView&lt;(SwiftUI_Project_Weather.GridViewItem, SwiftUI_Project_Weather.GridViewItem)&gt;&gt;, SwiftUI.GridRow&lt;SwiftUI.TupleView&lt;(SwiftUI_Project_Weather.GridViewItem, SwiftUI_Project_Weather.GridViewItem)&gt;&gt;)&gt; in SwiftUI_Project_Weather.GridView.body.getter : some"
+                  moduleName = "SwiftUI_Project_Weather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedabu-zeid/Documents/iOS%20Apps/SwiftUI%20Labs/SwiftUI_Project_Weather/SwiftUI_Project_Weather/Modules/WeatherHomeScreen/View/GridView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "122">
+               </Location>
+               <Location
+                  uuid = "D2D737DD-B7B8-4FBB-99BF-1FBCBC23EB4C - 660cc435f3308e0e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI_Project_Weather.GridViewItem, SwiftUI_Project_Weather.GridViewItem)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.GridRow&lt;SwiftUI.TupleView&lt;(SwiftUI_Project_Weather.GridViewItem, SwiftUI_Project_Weather.GridViewItem)&gt;&gt;, SwiftUI.GridRow&lt;SwiftUI.TupleView&lt;(SwiftUI_Project_Weather.GridViewItem, SwiftUI_Project_Weather.GridViewItem)&gt;&gt;)&gt; in SwiftUI_Project_Weather.GridView.body.getter : some"
+                  moduleName = "SwiftUI_Project_Weather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedabu-zeid/Documents/iOS%20Apps/SwiftUI%20Labs/SwiftUI_Project_Weather/SwiftUI_Project_Weather/Modules/WeatherHomeScreen/View/GridView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "114">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

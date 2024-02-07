@@ -13,6 +13,13 @@ class Forecastday: Codable, Identifiable {
     let day: Day
     let astro: Astro
     let hour: [Hour]
+    
+    init(){
+        self.date = ""
+        self.day = Day()
+        self.astro = Astro()
+        self.hour = []
+    }
 
     enum CodingKeys: String, CodingKey {
         case date

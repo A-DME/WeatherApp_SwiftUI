@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct HourlyTableView: View {
-    var hours: [String]
+    var hours: [Hour]
     var body: some View {
         VStack{
-            ForEach(hours, id: \.self){item in
-                HourlyTableViewCell(hour: item, temp: 15.56, morning: false)
+            ForEach(hours){item in
+                HourlyTableViewCell(hour: item, morning: false)
             }
             
         }
@@ -20,5 +20,5 @@ struct HourlyTableView: View {
 }
 
 #Preview {
-    HourlyTableView(hours: ["Now","3PM", "4PM"])
+    HourlyTableView(hours: [])
 }
