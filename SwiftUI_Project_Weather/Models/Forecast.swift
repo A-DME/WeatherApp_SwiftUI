@@ -8,9 +8,14 @@
 import Foundation
 
 // MARK: - Forecast
-class Forecast: Codable, Identifiable {
+struct Forecast: Codable, Identifiable {
     let forecastday: [Forecastday]
+    let id = UUID()
     init(){
         self.forecastday = []
     }
+    enum CodingKeys: String, CodingKey {
+        case forecastday
+        case id
+        }
 }

@@ -8,10 +8,11 @@
 import Foundation
 
 // MARK: - Hour
-class Hour: Codable, Identifiable {
+struct Hour: Codable, Identifiable {
     let time: String
     let tempC: Double
     let condition: Condition
+    let id = UUID()
     
     init() {
         self.time = ""
@@ -23,6 +24,7 @@ class Hour: Codable, Identifiable {
         case time
         case tempC = "temp_c"
         case condition
+        case id
         
     }
 }

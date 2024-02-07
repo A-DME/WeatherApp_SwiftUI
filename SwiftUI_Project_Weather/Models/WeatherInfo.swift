@@ -8,7 +8,8 @@
 import Foundation
 
 // MARK: - WeatherInfo
-class WeatherInfo: Codable, Identifiable {
+struct WeatherInfo: Codable, Identifiable {
+    let id = UUID()
     let location: Location
     let current: Current
     let forecast: Forecast
@@ -17,5 +18,9 @@ class WeatherInfo: Codable, Identifiable {
         self.location = Location()
         self.current = Current()
         self.forecast = Forecast()
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case location , current, forecast, id
     }
 }

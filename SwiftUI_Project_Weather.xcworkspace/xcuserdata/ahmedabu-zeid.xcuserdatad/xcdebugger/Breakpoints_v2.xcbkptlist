@@ -7,7 +7,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D2D737DD-B7B8-4FBB-99BF-1FBCBC23EB4C"
+            uuid = "5A52EC2D-B4D9-4D41-9F05-91C13F6E877E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -20,22 +20,7 @@
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "D2D737DD-B7B8-4FBB-99BF-1FBCBC23EB4C - 660cc435f3308e0e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI_Project_Weather.GridViewItem, SwiftUI_Project_Weather.GridViewItem)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.GridRow&lt;SwiftUI.TupleView&lt;(SwiftUI_Project_Weather.GridViewItem, SwiftUI_Project_Weather.GridViewItem)&gt;&gt;, SwiftUI.GridRow&lt;SwiftUI.TupleView&lt;(SwiftUI_Project_Weather.GridViewItem, SwiftUI_Project_Weather.GridViewItem)&gt;&gt;)&gt; in SwiftUI_Project_Weather.GridView.body.getter : some"
-                  moduleName = "SwiftUI_Project_Weather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedabu-zeid/Documents/iOS%20Apps/SwiftUI%20Labs/SwiftUI_Project_Weather/SwiftUI_Project_Weather/Modules/WeatherHomeScreen/View/GridView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "118">
-               </Location>
-               <Location
-                  uuid = "D2D737DD-B7B8-4FBB-99BF-1FBCBC23EB4C - 660cc435f3308e0e"
+                  uuid = "5A52EC2D-B4D9-4D41-9F05-91C13F6E877E - 660cc435f3308e0e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -50,7 +35,7 @@
                   offsetFromSymbolStart = "122">
                </Location>
                <Location
-                  uuid = "D2D737DD-B7B8-4FBB-99BF-1FBCBC23EB4C - 660cc435f3308e0e"
+                  uuid = "5A52EC2D-B4D9-4D41-9F05-91C13F6E877E - 660cc435f3308e0e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -62,7 +47,22 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "16"
                   endingLineNumber = "16"
-                  offsetFromSymbolStart = "114">
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "5A52EC2D-B4D9-4D41-9F05-91C13F6E877E - 660cc435f3308e0e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI_Project_Weather.GridViewItem, SwiftUI_Project_Weather.GridViewItem)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.GridRow&lt;SwiftUI.TupleView&lt;(SwiftUI_Project_Weather.GridViewItem, SwiftUI_Project_Weather.GridViewItem)&gt;&gt;, SwiftUI.GridRow&lt;SwiftUI.TupleView&lt;(SwiftUI_Project_Weather.GridViewItem, SwiftUI_Project_Weather.GridViewItem)&gt;&gt;)&gt; in SwiftUI_Project_Weather.GridView.body.getter : some"
+                  moduleName = "SwiftUI_Project_Weather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedabu-zeid/Documents/iOS%20Apps/SwiftUI%20Labs/SwiftUI_Project_Weather/SwiftUI_Project_Weather/Modules/WeatherHomeScreen/View/GridView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "140">
                </Location>
             </Locations>
          </BreakpointContent>

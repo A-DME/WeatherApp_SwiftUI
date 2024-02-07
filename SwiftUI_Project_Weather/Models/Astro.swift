@@ -8,14 +8,15 @@
 import Foundation
 
 // MARK: - Astro
-class Astro: Codable, Identifiable {
+struct Astro: Codable, Identifiable {
     let sunrise, sunset: String
+    let id = UUID()
 
     init() {
         self.sunrise = ""
         self.sunset = ""
     }
     enum CodingKeys: String, CodingKey {
-        case sunrise, sunset
+        case sunrise, sunset, id
     }
 }
