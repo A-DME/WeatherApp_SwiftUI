@@ -37,9 +37,9 @@ struct WeatherHomeView: View {
                         morning: isMorning
                     )
                     Spacer()
-                    StaticTableView(morning: isMorning)
+                    StaticTableView(morning: isMorning, forecastOf3Days: weatherInfo?.forecast.forecastday)
                     Spacer()
-                    GridView(isMorning: isMorning)
+                    GridView(currentInfo: weatherInfo ?? WeatherInfo(), isMorning: isMorning)
                     Spacer()
                 }
                 if isPresentingProgressIndicator{

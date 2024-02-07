@@ -10,4 +10,7 @@ import Foundation
 // MARK: - Forecast
 class Forecast: Codable, Identifiable {
     let forecastday: [Forecastday]
+    init(){
+        self.forecastday = []
+    }
 }

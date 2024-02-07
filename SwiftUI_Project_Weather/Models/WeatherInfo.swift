@@ -12,4 +12,10 @@ class WeatherInfo: Codable, Identifiable {
     let location: Location
     let current: Current
     let forecast: Forecast
+    
+    init() {
+        self.location = Location()
+        self.current = Current()
+        self.forecast = Forecast()
+    }
 }

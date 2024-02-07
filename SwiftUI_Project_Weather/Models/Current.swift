@@ -17,6 +17,16 @@ class Current: Codable, Identifiable {
     let feelslikeC: Double
     let visKM: Double
     
+    init() {
+        self.lastUpdated = ""
+        self.tempC = 0.0
+        self.condition = Condition()
+        self.pressureMB = 0.0
+        self.humidity = 0
+        self.feelslikeC = 0.0
+        self.visKM = 0.0
+    }
+    
     enum CodingKeys: String, CodingKey {
         case lastUpdated = "last_updated"
         case tempC = "temp_c"

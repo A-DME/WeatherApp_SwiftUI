@@ -13,6 +13,12 @@ class Hour: Codable, Identifiable {
     let tempC: Double
     let condition: Condition
     
+    init() {
+        self.time = ""
+        self.tempC = 0.0
+        self.condition = Condition()
+    }
+    
     enum CodingKeys: String, CodingKey {
         case time
         case tempC = "temp_c"

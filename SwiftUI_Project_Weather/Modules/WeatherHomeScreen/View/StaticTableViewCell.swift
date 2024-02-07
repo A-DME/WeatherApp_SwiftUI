@@ -6,26 +6,30 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct StaticTableViewCell: View {
-    var day: String
-    var minTemp, maxTemp: Double
+    var forecastday: Forecastday
     var morning: Bool
     var body: some View {
         HStack{
-            //            TODO: - Make Condition to check if day == today display "Today" instead of day
-            CustomText(text: day, size: 22, fontstyle: "Inter-Regular", isMorning: morning)
+            //  TODO: - Make Condition to check if day == today display "Today" instead of day
+            // TODO: forecastday.date to be wrapped into a function that converts the value of the date format "yyyy-MM-dd" to the suppressed case of the day... Ex: Tue, Wed... also try to inject the above TODO inside that function to return "Today" instead of today's name if the dates match
+            CustomText(text: forecastday.date, size: 22, fontstyle: "Inter-Regular", isMorning: morning)
                 .foregroundColor(morning ? .black : .white)
                 .frame(width: 70, alignment: .leading)
             
             Spacer()
-            Image(.cloudy)
+//            Image(.cloudy)
+//                .resizable()
+//                .frame(width: 48, height: 48)
+            KFImage(URL(string: APIHelper.getURLFor(.conditionImage, imageFileURL: forecastday.day.condition.icon)))
                 .resizable()
                 .frame(width: 48, height: 48)
             
             Spacer()
             
-            CustomText(text: "\(minTemp)° - \(maxTemp)°", size: 22, fontstyle: "Inter-Regular",isMorning: morning)
+            CustomText(text: "\(forecastday.day.mintempC)˚ - \(forecastday.day.maxtempC)˚", size: 22, fontstyle: "Inter-Regular",isMorning: morning)
                 .foregroundColor(morning ? .black : .white)
         }
         .padding(.trailing)
@@ -35,5 +39,5 @@ struct StaticTableViewCell: View {
 }
 
 #Preview {
-    StaticTableViewCell(day: "Wed", minTemp: 7.8, maxTemp: 15.5,morning: true)
+    StaticTableViewCell(forecastday: Forecastday(),morning: true)
 }
