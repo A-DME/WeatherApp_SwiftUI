@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WeatherDetailsView: View {
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         ZStack{
             Image(.morningBackground)
@@ -18,19 +19,21 @@ struct WeatherDetailsView: View {
             
             
             VStack{
-                HStack{
-                    Button("←"){
-//                TODO: type here logic for navigating back to home screen
-                    }
-                    .font(.largeTitle).foregroundColor(.white)
-                    Spacer()
-                }
-                .padding()
                 HourlyTableView(hours: ["Now","3PM", "4PM", "5PM"])
-                    .padding()
+                    .padding(EdgeInsets(top: 80, leading: 0, bottom: 0, trailing: 0))
                 Spacer()
             }
-        }.navigationBarBackButtonHidden(true)
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button("←"){
+                    // TODO: type here logic for navigating back to home screen -- Done
+                            dismiss()
+                        }
+                        .font(.largeTitle).foregroundColor(.white)
+                    }
+                }
             
         
     }

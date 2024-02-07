@@ -14,8 +14,8 @@ class NetworkReachability: ObservableObject{
     var monitor = NWPathMonitor()
     
     var monitorQueue = DispatchQueue(label: "network")
-    
-    @Published var networkStatus : Bool = false
+    // TODO: - Search Why does it Lag or fail to detect network state
+    @Published var networkStatus : Bool = true // should be false
 
     init(){
         
