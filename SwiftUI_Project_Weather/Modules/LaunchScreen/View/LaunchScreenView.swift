@@ -9,17 +9,43 @@ import SwiftUI
 
 struct LaunchScreenView: View {
     
-    private var isMorning : Bool = TestBackground().checkMorningOrEvening()
+    @State private var isPresentingAlert : Bool = false
+    
+    var viewModel = LaunchViewModel()
+    
+    @StateObject var networkReachability = NetworkReachability()
     
     var body: some View {
         ZStack{
-            Color(isMorning ? ColorsManager.dayBackgroundColor : ColorsManager.nightBackgroundColor)
-                .ignoresSafeArea()
-            LaunchAnimationView(animationFileName: isMorning ? "day" : "night", loopMode: .loop)
-                .frame(width: UIScreen.main.bounds.width, height: 250)
-        }.onAppear(){
             
+            Color(viewModel.getBackgroundColor())
+                .ignoresSafeArea()
+            LaunchAnimationView(animationFileName: viewModel.getAnimationName(), loopMode: .loop)
+                .frame(width: UIScreen.main.bounds.width, height: 250)
         }
+        .alert("Connection Lost", isPresented: $isPresentingAlert){
+            Button("OK", role: .none){
+                
+            }
+        }message: {
+            Text("You're offline")
+        }
+        .onAppear(){
+            let network = NetworkReachability()
+            print("network")
+            print(network.networkStatus)
+        }
+        .onReceive(networkReachability.$networkStatus, perform: { _ in
+            
+            print(networkReachability.networkStatus)
+
+            if networkReachability.networkStatus{
+                isPresentingAlert = false
+            }else{
+                isPresentingAlert = true
+            }
+        })
+        
     }
 }
 
