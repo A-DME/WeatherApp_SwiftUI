@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct WeatherHomeView: View {
-    private let isMorning = TestBackground().checkMorningOrEvening()
+    private let isMorning = DateHandler().checkMorningOrEvening()
     
     @State private var isPresentingProgressIndicator = false
     
     @StateObject private var viewModel = WeatherHomeViewModel(networkManager: NetworkManager())
     
     @State private var weatherInfo : WeatherInfo?
+    
+    @StateObject var networkReachability = NetworkReachability.networkReachability
+    @State private var isPresentingAlert : Bool = false
+    
     var body: some View {
         NavigationView{
             ZStack{
@@ -33,19 +37,47 @@ struct WeatherHomeView: View {
                     Spacer()
                     GridView(currentInfo: weatherInfo ?? WeatherInfo(), isMorning: isMorning)
                     Spacer()
+                    Spacer()
                 }
                 if isPresentingProgressIndicator{
                     ProgressIndicator()
                 }
             }
+            .alert("No Connection", isPresented: $isPresentingAlert) {
+                Button("OK", role: .none){
+                    
+                }
+            }message: {
+                Text("You're offline")
+            }
             .onAppear(){
-                isPresentingProgressIndicator = true
-                viewModel.loadDataFromApi()
-                viewModel.bindResultToViewController = {
-                    weatherInfo = viewModel.getWeatherInfo()
+                if networkReachability.networkStatus{
+                    isPresentingAlert = false
+                    isPresentingProgressIndicator = true
+                    viewModel.loadDataFromApi()
+                    viewModel.bindResultToViewController = {
+                        weatherInfo = viewModel.getWeatherInfo()
+                        isPresentingProgressIndicator = false
+                    }
+                }else{
+                    isPresentingAlert = true
                     isPresentingProgressIndicator = false
                 }
-            }
+                
+            }.onReceive(networkReachability.$networkStatus, perform: { _ in
+                if networkReachability.networkStatus{
+                    isPresentingAlert = false
+                    isPresentingProgressIndicator = true
+                    viewModel.loadDataFromApi()
+                    viewModel.bindResultToViewController = {
+                        weatherInfo = viewModel.getWeatherInfo()
+                        isPresentingProgressIndicator = false
+                    }
+                }else{
+                    isPresentingAlert = true
+                    isPresentingProgressIndicator = false
+                }
+            })
         }
         
         

@@ -15,7 +15,7 @@ class NetworkReachability: ObservableObject{
     var monitor = NWPathMonitor()
     
     var monitorQueue = DispatchQueue(label: "network")
-    @Published var networkStatus : Bool = true
+    @Published var networkStatus : Bool = false
 
     private init(){
         monitor.start(queue: monitorQueue)

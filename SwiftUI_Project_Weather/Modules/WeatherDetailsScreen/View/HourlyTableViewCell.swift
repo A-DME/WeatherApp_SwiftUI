@@ -14,22 +14,22 @@ struct HourlyTableViewCell: View {
     var body: some View {
         HStack{
             //TODO: - Make Condition to check if hour == current hour display "Now" instead of hour
-            CustomText(text: hour.time, size: 36, fontstyle: "Inter-Regular", isMorning: morning)
+            Spacer()
+            CustomText(text:DateHandler().getHourFormat(hour: hour.time), size: 32, fontstyle: "Inter-Regular", isMorning: morning)
                 .foregroundColor(morning ? .black : .white)
-                .frame(width: 80, alignment: .leading)
+                .frame(width: 100, alignment: .leading)
             
             Spacer()
-//            Image(.cloudy)
-//                .resizable()
-//                .frame(width: 80, height: 80)
+            Spacer()
             KFImage(URL(string: APIHelper.getURLFor(.conditionImage, imageFileURL: hour.condition.icon)))
                 .resizable()
                 .frame(width: 80, height: 80)
             
             Spacer()
-            
+            Spacer()
             CustomText(text: "\(Int(hour.tempC))°", size: 36, fontstyle: "Inter-Regular", isMorning: morning)
                 .foregroundColor(morning ? .black : .white)
+            Spacer()
         }
         .padding()
         .frame(height: 60)

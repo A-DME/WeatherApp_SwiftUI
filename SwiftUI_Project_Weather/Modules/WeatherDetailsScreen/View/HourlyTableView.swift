@@ -9,10 +9,11 @@ import SwiftUI
 
 struct HourlyTableView: View {
     var hours: [Hour]
+    var isMorning:Bool
     var body: some View {
         VStack{
-            ForEach(hours){item in
-                HourlyTableViewCell(hour: item, morning: false)
+            ForEach(DateHandler().getHoursOfDay(hours: hours)){item in
+                HourlyTableViewCell(hour: item, morning: isMorning)
             }
             
         }
@@ -20,5 +21,5 @@ struct HourlyTableView: View {
 }
 
 #Preview {
-    HourlyTableView(hours: [])
+    HourlyTableView(hours: [],isMorning: true)
 }
