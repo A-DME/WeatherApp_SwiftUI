@@ -103,16 +103,11 @@ struct DateHandler{
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         let currentDateTime = dateFormatter.string(from: Date.now)
         let currentDate = currentDateTime.components(separatedBy: " ")[0]
-        var currentHour = currentDateTime.components(separatedBy: " ")[1].components(separatedBy: ":")[0]
-        let currentMinute = currentDateTime.components(separatedBy: " ")[1].components(separatedBy: ":")[1]
+        let currentHour = currentDateTime.components(separatedBy: " ")[1].components(separatedBy: ":")[0]
         let date = dateTime.components(separatedBy: " ")[0]
         var hour = dateTime.components(separatedBy: " ")[1].components(separatedBy: ":")[0]
-        let toCompare = isUpcoming ? (Int(hour) ?? 0 - 1) : (Int(hour) ?? 0)
-//        if isUpcoming{
-//            currentHour = String(Int(currentHour) ?? 0 + 1)
-//            hour = String(Int(hour) ?? 0 - 1)
-//        }
-        if (currentHour == hour || Int(currentHour) == toCompare ) && currentDate == date {
+        let hourToCompare = isUpcoming ? (Int(hour) ?? 0) - 1 : (Int(hour) ?? 0)
+        if (currentHour == hour || Int(currentHour) == hourToCompare ) && currentDate == date {
             return "Now"
         }else{
             hour = Int(hour) ?? 0 <= 11 ? removeLeadingZeroes(hour: hour) + " AM" : convertTo12HourFormat(hour: hour) + " PM"

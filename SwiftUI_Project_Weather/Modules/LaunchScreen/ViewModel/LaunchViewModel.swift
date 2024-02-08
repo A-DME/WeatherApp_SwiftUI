@@ -12,11 +12,11 @@ import CoreGraphics
 class LaunchViewModel{
     
     func getBackgroundColor()->CGColor{
-        return TestBackground().checkMorningOrEvening() ? ColorsManager.dayBackgroundColor : ColorsManager.nightBackgroundColor
+        return DateHandler().checkMorningOrEvening() ? ColorsManager.dayBackgroundColor : ColorsManager.nightBackgroundColor
     }
     
     func getAnimationName()->String{
-        return TestBackground().checkMorningOrEvening() ? "day" : "night"
+        return DateHandler().checkMorningOrEvening() ? "day" : "night"
 
     }
     
