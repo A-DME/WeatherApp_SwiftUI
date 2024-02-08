@@ -13,9 +13,16 @@ struct HourlyTableView: View {
     var body: some View {
         VStack{
             ForEach(DateHandler().getHoursOfDay(hours: hours)){item in
-                HourlyTableViewCell(hour: item, morning: isMorning)
+                if item == DateHandler().getHoursOfDay(hours: hours).first{
+                    HourlyTableViewCell(hour: item, isFirst: true, morning: isMorning)
+                } else{
+                    HourlyTableViewCell(hour: item, isFirst: false, morning: isMorning)
+
+                }
             }
             
+        }.task {
+            print(DateHandler().getHoursOfDay(hours: hours).first)
         }
     }
 }

@@ -10,12 +10,13 @@ import Kingfisher
 
 struct HourlyTableViewCell: View {
     var hour: Hour
+    var isFirst: Bool
     var morning: Bool
     var body: some View {
         HStack{
             //TODO: - Make Condition to check if hour == current hour display "Now" instead of hour
             Spacer()
-            CustomText(text:DateHandler().getHourFormat(hour: hour.time), size: 32, fontstyle: "Inter-Regular", isMorning: morning)
+            CustomText(text:DateHandler().getHourFormat(dateTime: hour.time, isUpcoming: isFirst), size: 32, fontstyle: "Inter-Regular", isMorning: morning)
                 .foregroundColor(morning ? .black : .white)
                 .frame(width: 100, alignment: .leading)
             
@@ -38,5 +39,5 @@ struct HourlyTableViewCell: View {
 }
 
 #Preview {
-    HourlyTableViewCell(hour: Hour(),morning: true)
+    HourlyTableViewCell(hour: Hour(), isFirst: false,morning: true)
 }

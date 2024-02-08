@@ -8,7 +8,11 @@
 import Foundation
 
 // MARK: - Hour
-struct Hour: Codable, Identifiable {
+struct Hour: Codable, Identifiable, Equatable {
+    static func == (lhs: Hour, rhs: Hour) -> Bool {
+        lhs.time == rhs.time
+    }
+    
     let time: String
     let tempC: Double
     let condition: Condition
