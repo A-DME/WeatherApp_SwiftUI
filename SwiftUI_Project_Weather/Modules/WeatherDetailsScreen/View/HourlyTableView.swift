@@ -15,14 +15,11 @@ struct HourlyTableView: View {
             ForEach(DateHandler().getHoursOfDay(hours: hours)){item in
                 if item == DateHandler().getHoursOfDay(hours: hours).first{
                     HourlyTableViewCell(hour: item, isFirst: true, morning: isMorning)
-                } else{
+                } else {
                     HourlyTableViewCell(hour: item, isFirst: false, morning: isMorning)
 
                 }
             }
-            
-        }.task {
-            print(DateHandler().getHoursOfDay(hours: hours).first)
         }
     }
 }

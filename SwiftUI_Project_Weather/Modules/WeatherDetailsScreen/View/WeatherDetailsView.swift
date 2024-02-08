@@ -37,7 +37,7 @@ struct WeatherDetailsView: View {
                         Button("←"){
                             dismiss()
                         }
-                        .font(.largeTitle).foregroundColor(.white)
+                        .font(.largeTitle).foregroundColor(isMorning ? .black : .white)
                     }
                 }
         .alert("Connection Lost", isPresented: $isPresentingAlert) {
